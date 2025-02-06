@@ -1,0 +1,114 @@
+.sidebar {
+    border-right: 0.1rem solid black;
+    background-color: white;
+    width: 30vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -23.5vw;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.sidebar:hover {
+    left: -22vw;
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+.spine {
+    border-left: 0.1rem solid black;
+    width: 6.5vw;
+    min-width: 75px;
+    height: 100%;
+    right: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: calc(4rem + 4vh);
+    cursor: pointer;
+}
+
+.spineText {
+    display: inline-block;
+    transform: rotate(90deg);
+    white-space: nowrap;
+    font-size: calc(0.5rem + 0.5vw);
+}
+
+.nav {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    padding: calc(1rem + 1vw);
+}
+
+.optionsText {
+    font-size: calc(1.15rem + 1vw);
+    line-height: calc(1.5rem + 1.3vw);
+}
+
+.optionsText.active {
+    text-decoration: underline;
+}
+
+.information {
+    font-size: calc(0.6rem + 0.5vw);
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        border-top: 0.1rem solid black;
+        border-right: none;
+        width: 100vw;
+        top: 91.2vh;
+        left: 0;
+        flex-direction: column;
+        justify-self: space-between;
+        transition: top 0.3s ease;
+    }
+
+    .sidebar:hover {
+        left: 0;
+        bottom: 24vh;
+    }
+
+    .sidebar.open {
+        top: 0;
+    }
+
+    .spine {
+        border-left: none;
+        border-bottom: 0.1rem solid black;
+        width: 100%;
+        height: auto;
+        padding: calc(0.8rem + 0.8vh) 0;
+    }
+
+    .spineText {
+        transform: none;
+        text-align: center;
+        font-size: calc(0.7rem + 0.7vw);
+    }
+
+    .nav {
+        width: 100%;
+        height: 100vh;
+        padding: calc(1rem + 1vw);
+    }
+    
+    .optionsText {
+        font-size: calc(1.9rem + 1vw);
+        line-height: calc(2.5rem + 1vw);
+    }
+
+    .information {
+        font-size: calc(0.8rem + 0.8vw);
+    }
+}

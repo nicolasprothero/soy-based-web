@@ -1,0 +1,132 @@
+.book {
+    border: 0.1rem solid black;
+    background-color: white;
+    height: 55vh;
+    min-height: 455px;
+    width: 5vw;
+    min-width: 80px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    cursor: pointer;
+}
+
+.book.inactive {
+    border: 0.1rem solid #BEBEBE;
+    color: #BEBEBE;
+    pointer-events: none;
+}
+
+.book:hover .hoverInfo {
+    display: block;
+}
+
+.hoverInfo {
+    border: 0.1rem solid black;
+    background-color: white;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 415px;
+    height: 610px;
+    background-color: white;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+
+    padding: 2rem;
+}
+
+.hoverContainer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hoverInfoTitle {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.hoverImage {
+    width: 350px;
+    height: 250px;
+    object-fit: cover;
+    object-position: center; 
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+.hoverInfoBody {
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.viewButton {
+    text-align: center;
+}
+
+.title {
+    padding: calc(0.8rem + 0.8vw);
+    display: inline-block;
+    transform: rotate(90deg);
+    transform-origin: center center;
+    white-space: nowrap;
+    font-size: calc(0.6rem + 0.5vw);
+}
+
+.year {
+    display: inline-block;
+    font-size: calc(0.6rem + 0.5vw);
+    transform: rotate(90deg);
+    transform-origin: center center;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .title {
+        padding: calc(1rem + 1vw);
+        font-size: calc(0.8rem + 1vw);
+    }
+
+    .year {
+        padding: calc(1rem + 1vw);
+        font-size: calc(0.8rem + 1vw);
+    }
+
+    .hoverInfo {
+        width: 90vw;
+        height: 610px;
+        padding: 2rem;
+    }
+    
+    .hoverContainer {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .hoverInfoTitle {
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hoverImage {
+        width: 100%;
+        height: 40%;
+        object-fit: cover;
+        object-position: center; 
+    }
+    
+    .hoverInfoBody {
+        font-size: 1.1rem;
+        line-height: 1.5;
+    }
+    
+}

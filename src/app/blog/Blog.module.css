@@ -1,0 +1,20 @@
+.blog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+}
+
+.bookshelf {
+    width: 800px;
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+    margin: 1rem;
+    justify-content: center; 
+}
+
+.shelfNum {
+
+}
