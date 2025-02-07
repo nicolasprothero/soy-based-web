@@ -105,7 +105,7 @@
     background-color: white;
     display: none;
     position: fixed;
-    top: 50;
+    top: 50px; /* Added unit */
     left: 50%;
     width: 55vw;
     height: auto;

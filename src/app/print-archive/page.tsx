@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './print-archive.module.css';
-import archiveData from '../../../archive/archive.json';
+import archiveData from '../../../public/json/archive.json';
 
 export default function printArchive() {
   interface ArchiveItem {

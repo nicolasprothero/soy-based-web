@@ -15,7 +15,8 @@ export async function generateStaticParams() {
 }
 
 export default async function Post({ params }: PostProps) {
-  const postData = await getPostData(params.id);
+  const { id } = await params;
+  const postData = await getPostData(id);
 
   const titleParts = postData.title.split(': ');
 
