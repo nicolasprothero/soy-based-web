@@ -1,10 +1,10 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { remark } from 'remark';
-import html from 'remark-html';
+import MarkdownIt from 'markdown-it';
 
 const postsDirectory = path.join(process.cwd(), '/src/posts');
+const md = new MarkdownIt();
 
 interface PostId {
   params: {
@@ -12,7 +12,17 @@ interface PostId {
   };
 }
 
-export function getSortedPostsData() {
+interface PostData {
+  id: string;
+  title: string;
+  date: string;
+  author: string;
+  read_time: string;
+  image_path?: string;
+  contentHtml: string;
+}
+
+export function getSortedPostsData(): PostData[] {
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames.map(fileName => {
     const id = fileName.replace(/\.md$/, '');
@@ -24,48 +34,38 @@ export function getSortedPostsData() {
       id,
       title: matterResult.data.title,
       date: matterResult.data.date,
-      author : matterResult.data.author,
+      author: matterResult.data.author,
       read_time: matterResult.data.read_time,
-      image_path: matterResult.data.image_path
+      image_path: matterResult.data.image_path,
+      contentHtml: '',
     };
   });
 
-  return allPostsData.sort((a, b) => {
-    if (a.date > b.date) {
-      return 1;
-    } else {
-      return -1;
-    }
-  });
+  return allPostsData.sort((a, b) => (a.date > b.date ? 1 : -1));
 }
 
 export function getAllPostIds(): PostId[] {
   const fileNames = fs.readdirSync(postsDirectory);
-  return fileNames.map(fileName => {
-    return {
-      params: {
-        id: fileName.replace(/\.md$/, '')
-      }
-    };
-  });
+  return fileNames.map(fileName => ({
+    params: {
+      id: fileName.replace(/\.md$/, '')
+    }
+  }));
 }
 
-export async function getPostData(id: string) {
+export async function getPostData(id: string): Promise<PostData> {
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const matterResult = matter(fileContents);
 
-  const processedContent = await remark()
-    .use(html)
-    .process(matterResult.content);
-  const contentHtml = processedContent.toString();
+  const contentHtml = md.render(matterResult.content);
 
   return {
     id,
     contentHtml,
     title: matterResult.data.title,
     date: matterResult.data.date,
-    author : matterResult.data.author,
+    author: matterResult.data.author,
     read_time: matterResult.data.read_time,
     image_path: matterResult.data.image_path
   };

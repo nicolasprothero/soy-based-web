@@ -14,9 +14,20 @@ export async function generateStaticParams() {
   }));
 }
 
+interface PostData {
+  id: string;
+  title: string;
+  date: string;
+  author: string;
+  read_time: string;
+  image_path?: string;
+  contentHtml: string;
+}
+
 export default async function Post({ params }: PostProps) {
-  const { id } = await params;
-  const postData = await getPostData(id);
+  const { id } = params;
+
+  const postData: PostData = await getPostData(id);
 
   const titleParts = postData.title.split(': ');
 
