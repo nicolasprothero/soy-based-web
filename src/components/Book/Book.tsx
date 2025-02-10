@@ -8,10 +8,10 @@ interface BookProps {
   date: string;
   author: string;
   read_time: string;
-  image_path: string;
+  image_path?: string;
 }
 
-const Book: React.FC<BookProps> = ({ isActive, id, title, date, author, read_time, image_path}) => {
+const Book: React.FC<BookProps> = ({ isActive, id, title, date, author, read_time, image_path }) => {
   const titleParts = (title as string).split(': ');
   const year = new Date(date).getFullYear();
 

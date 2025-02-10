@@ -1,19 +1,6 @@
 import { getAllPostIds, getPostData } from '../../../lib/posts';
 import styles from './Post.module.css';
 
-interface PostProps {
-  params: {
-    id: string;
-  };
-}
-
-export async function generateStaticParams() {
-  const paths = getAllPostIds();
-  return paths.map((path) => ({
-    id: path.params.id,
-  }));
-}
-
 interface PostData {
   id: string;
   title: string;
@@ -24,10 +11,31 @@ interface PostData {
   contentHtml: string;
 }
 
-export default async function Post({ params }: PostProps) {
-  const { id } = params;
+interface PageProps {
+  params: {
+    id: string;
+  };
+}
 
-  const postData: PostData = await getPostData(id);
+export async function generateStaticParams() {
+  const paths = getAllPostIds();
+  return paths.map(({ params }) => ({
+    id: params.id,
+  }));
+}
+
+export default async function Post({ params }: PageProps) {
+  const { id } = params;
+  const paths = getAllPostIds();
+  const postPath = paths.find(path => path.params.id === id);
+
+  if (!postPath) {
+    return <div>Post not found</div>;
+  }
+
+  console.log("postPath.params.id:", postPath.params.id, typeof postPath.params.id);
+
+  const postData: PostData = await getPostData(postPath.params.id);
 
   const titleParts = postData.title.split(': ');
 

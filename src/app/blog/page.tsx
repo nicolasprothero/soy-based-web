@@ -9,7 +9,7 @@ interface PostData {
   date: string;
   author: string;
   read_time: string;
-  image_path: string;
+  image_path?: string;
 }
 
 const Blog: React.FC = () => {
