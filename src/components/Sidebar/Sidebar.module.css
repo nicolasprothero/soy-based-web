@@ -67,7 +67,7 @@
         border-top: 0.1rem solid black;
         border-right: none;
         width: 100vw;
-        top: 91.2vh;
+        top: calc(100dvh - 68px);
         left: 0;
         flex-direction: column;
         justify-self: space-between;
@@ -76,7 +76,7 @@
 
     .sidebar:hover {
         left: 0;
-        bottom: 24vh;
+        bottom: 24dvh;
     }
 
     .sidebar.open {
@@ -87,7 +87,7 @@
         border-left: none;
         border-bottom: 0.1rem solid black;
         width: 100%;
-        height: auto;
+        height: 80px;
         padding: calc(0.8rem + 0.8vh) 0;
     }
 
