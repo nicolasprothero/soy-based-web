@@ -1,0 +1,32 @@
+{
+  "archive": [
+      {
+          "title": "Sea Adventure",
+          "artist": "Adam Coe",
+          "date": "YYYY-MM-DD",
+          "paper_size": "A4",
+          "paper_weight": "200gsm",
+          "colors": [
+              "Fluorescent Yellow",
+              "Fluorescent Pink",
+              "Aqua",
+              "Federal Blue",
+              "White"
+          ],
+          "image_path": "/images/ppng.png"
+      },
+      {
+          "title": "Another Title",
+          "artist": "Another Artist",
+          "date": "YYYY-MM-DD",
+          "paper_size": "A3",
+          "paper_weight": "250gsm",
+          "colors": [
+              "yellow",
+              "black",
+              "white"
+          ],
+          "image_path": "/images/tabf.png"
+      }
+  ]
+}
