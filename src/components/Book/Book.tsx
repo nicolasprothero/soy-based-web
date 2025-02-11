@@ -27,7 +27,7 @@ const Book: React.FC<BookProps> = ({ isActive, id, title, date, author, read_tim
           <div className={styles.hoverInfo}>
             <div className={styles.hoverContainer}>
               <div className={styles.hoverMainBody}>
-                <img src={`/soy-based-web${image_path}`} alt="Book cover" className={styles.hoverImage} />
+                <img src={image_path} alt="Book cover" className={styles.hoverImage} />
                 <div className={styles.hoverInfoTitle} style={{ textTransform: 'uppercase' }}>
                   {titleParts[0]}:
                   {titleParts[1] && <><br />{titleParts[1]}</>}

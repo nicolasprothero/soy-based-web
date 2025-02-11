@@ -50,7 +50,7 @@ export default function PrintArchive() {
     <div ref={pageRef} className={styles.page}>
       <img
         ref={logoRef}
-        src="/soy-based-web/svg/PrintArchiveLogo.svg"
+        src="/svg/PrintArchiveLogo.svg"
         alt="Print Archive Logo"
         className={styles.logo}
       />
@@ -75,7 +75,7 @@ export default function PrintArchive() {
               <div className={styles.hoverPrint}>
                 <div className={styles.hoverContainer}>
                   <div className={styles.hoverFrame}>
-                    <img src={`/soy-based-web${item.image_path}`} alt="Print Image" className={styles.hoverImage} />
+                    <img src={item.image_path} alt="Print Image" className={styles.hoverImage} />
                   </div>
                   <div className={styles.hoverInfo}>
                     <div className={styles.subtitle} style={{ textTransform: 'uppercase' }}>TITLE</div>
