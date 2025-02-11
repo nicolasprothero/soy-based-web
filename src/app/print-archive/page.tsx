@@ -1,10 +1,11 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
+import { useRouter } from 'next/navigation'; // Updated import
 import styles from './print-archive.module.css';
 import archiveData from '../../../public/json/archive.json';
 
-export default function printArchive() {
+export default function PrintArchive() { 
   interface ArchiveItem {
     title: string;
     artist: string;
@@ -20,6 +21,7 @@ export default function printArchive() {
   const tableRef = useRef<HTMLDivElement>(null);
   const pageRef = useRef<HTMLDivElement>(null);
   const scrollDownRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
 
   useEffect(() => {
     setArchive(archiveData.archive);
@@ -48,7 +50,7 @@ export default function printArchive() {
     <div ref={pageRef} className={styles.page}>
       <img
         ref={logoRef}
-        src={"/svg/PrintArchiveLogo.svg"}
+        src="/soy-based-web/svg/PrintArchiveLogo.svg"
         alt="Print Archive Logo"
         className={styles.logo}
       />
@@ -73,7 +75,7 @@ export default function printArchive() {
               <div className={styles.hoverPrint}>
                 <div className={styles.hoverContainer}>
                   <div className={styles.hoverFrame}>
-                    <img src={item.image_path} alt="Print Image" className={styles.hoverImage} />
+                    <img src={`/soy-based-web${item.image_path}`} alt="Print Image" className={styles.hoverImage} />
                   </div>
                   <div className={styles.hoverInfo}>
                     <div className={styles.subtitle} style={{ textTransform: 'uppercase' }}>TITLE</div>

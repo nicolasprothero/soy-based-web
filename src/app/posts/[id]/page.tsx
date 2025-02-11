@@ -42,7 +42,7 @@ export default async function Post({ params }: PageProps) {
   return (
     <div className={styles.post}>
       {postData.image_path && (
-        <img src={postData.image_path} alt={postData.title} className={styles.bannerImage} />
+        <img src={`/soy-based-web${postData.image_path}`} alt={postData.title} className={styles.bannerImage} />
       )}
       <h1 style={{ textTransform: 'uppercase' }}>
         {titleParts[0]}:
