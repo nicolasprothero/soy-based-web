@@ -36,12 +36,24 @@ export default function PrintArchive() {
           window.removeEventListener('wheel', handleWheel);
         }
       }
-    }
+    };
+
+    const handleTouchMove = (event: TouchEvent) => {
+      if (logoRef.current && tableRef.current && pageRef.current && scrollDownRef.current) {
+        logoRef.current.classList.add(styles.shrink);
+        tableRef.current.classList.add(styles.visible);
+        pageRef.current.classList.add(styles.shrink);
+        scrollDownRef.current.classList.add(styles.visible);
+        window.removeEventListener('touchmove', handleTouchMove);
+      }
+    };
 
     window.addEventListener('wheel', handleWheel, { passive: false });
+    window.addEventListener('touchmove', handleTouchMove, { passive: false });
     document.body.style.overflow = 'hidden';
     return () => {
       window.removeEventListener('wheel', handleWheel);
+      window.removeEventListener('touchmove', handleTouchMove);
       document.body.style.overflow = 'auto';
     };
   }, []);

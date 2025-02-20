@@ -3,6 +3,29 @@
   font-weight: 700;
   padding: 2vh 2vw;
   margin-left: 6vw;
+  position: relative;
+  z-index: 2;
+  color: white;
+  -webkit-text-stroke-width: 1.4px;
+  -webkit-text-stroke-color: black;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+}
+
+.mainImage {
+  width: 57%;
+  pointer-events: none;
 }
 
 @media (max-width: 768px) {
