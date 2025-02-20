@@ -1,32 +1,54 @@
 {
   "archive": [
       {
-          "title": "Sea Adventure",
-          "artist": "Adam Coe",
-          "date": "YYYY-MM-DD",
+          "title": "Lucy's Animation",
+          "artist": "Lucy de Greling",
+          "date": "2025-02-19",
           "paper_size": "A4",
-          "paper_weight": "200gsm",
+          "paper_weight": "100gsm",
           "colors": [
-              "Fluorescent Yellow",
+              "Yellow",
               "Fluorescent Pink",
-              "Aqua",
-              "Federal Blue",
-              "White"
+              "Medium Blue"
           ],
-          "image_path": "/images/ppng.png"
+          "image_path": "/archive/lucys.gif"
       },
       {
-          "title": "Another Title",
-          "artist": "Another Artist",
-          "date": "YYYY-MM-DD",
-          "paper_size": "A3",
-          "paper_weight": "250gsm",
+          "title": "Soy Based Web Animation",
+          "artist": "Nic H Prothero",
+          "date": "2025-02-19",
+          "paper_size": "11x17",
+          "paper_weight": "100gsm",
           "colors": [
-              "yellow",
-              "black",
-              "white"
+            "Yellow",
+            "Fluorescent Pink",
+            "Medium Blue"
           ],
-          "image_path": "/images/tabf.png"
-      }
+          "image_path": "/archive/nics.gif"
+      },
+      {
+        "title": "dance.gif",
+        "artist": "netra regin",
+        "date": "2025-02-19",
+        "paper_size": "11x17",
+        "paper_weight": "100gsm",
+        "colors": [
+          "Medium Blue"
+        ],
+        "image_path": "/archive/netra.gif"
+    },
+    {
+        "title": "THOISTY!",
+        "artist": "Adrian Cadena",
+        "date": "2025-02-19",
+        "paper_size": "11x17",
+        "paper_weight": "100gsm",
+        "colors": [
+            "Yellow",
+            "Fluorescent Pink",
+            "Medium Blue"
+        ],
+        "image_path": "/archive/adrian.gif"
+    }
   ]
 }
