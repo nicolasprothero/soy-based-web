@@ -19,7 +19,7 @@ const Book: React.FC<BookProps> = ({ isActive, id, title, date, author, read_tim
     <Link href={`/posts/${id}`}>
       <div className={`${styles.book} ${!isActive ? styles.inactive : ''}`}>
         <div className={styles.title}>
-          {titleParts[0]}:
+          <strong>{titleParts[0]}</strong>:
           {titleParts[1] && <><br />{titleParts[1]}</>}
         </div>
         <div className={styles.year}>{year}</div>
@@ -29,7 +29,7 @@ const Book: React.FC<BookProps> = ({ isActive, id, title, date, author, read_tim
               <div className={styles.hoverMainBody}>
                 <img src={image_path} alt="Book cover" className={styles.hoverImage} />
                 <div className={styles.hoverInfoTitle} style={{ textTransform: 'uppercase' }}>
-                  {titleParts[0]}:
+                  <strong>{titleParts[0]}</strong>:
                   {titleParts[1] && <><br />{titleParts[1]}</>}
                 </div>
                 <div className={styles.hoverInfoBody} style={{ textTransform: 'uppercase' }}>BY {author}</div>

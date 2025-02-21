@@ -5,13 +5,11 @@ import Header from "../components/Header/Header";
 import Sidebar from "../components/Sidebar/Sidebar";
 import "./globals.css";
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <html lang="en">
       <head>
@@ -21,8 +19,8 @@ export default function RootLayout({
       <body>
         <Header />
         <Sidebar />
+        <main>{children}</main>
         <Footer />
-        {children}
       </body>
     </html>
   );

@@ -24,11 +24,11 @@ const Sidebar = () => {
                     home   
                 </Link>
             </div>
-            <div className={styles.optionsText}>
+            {/* <div className={styles.optionsText}>
                 <Link href="/colors" onClick={toggleSidebar}>
                     colors
                 </Link>
-            </div>
+            </div> */}
             <div className={styles.optionsText}>
                 <Link href="/blog" onClick={toggleSidebar}>
                     blog

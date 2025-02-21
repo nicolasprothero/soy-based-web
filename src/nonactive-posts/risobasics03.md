@@ -1,8 +1,8 @@
 ---
-title: "RISO BASICS: TOUR OF THE PRINTER"
+title: "RISO BASICS: PRINTING FROM A COMPUTER"
 image_path: "/images/tabf.png"
 author : "Nic Prothero"
-date: "2025-01-23"
+date: "2099-02-19"
 read_time: "20"
 ---
 

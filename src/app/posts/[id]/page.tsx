@@ -1,5 +1,6 @@
 import { getAllPostIds, getPostData } from '../../../lib/posts';
 import styles from './Post.module.css';
+import Head from 'next/head';
 
 interface PostData {
   id: string;
@@ -41,6 +42,10 @@ export default async function Post({ params }: PageProps) {
 
   return (
     <div className={styles.post}>
+      <Head>
+        <title>{postData.title}</title>
+        <link rel="stylesheet" href="/path/to/global/styles.css" />
+      </Head>
       {postData.image_path && (
         <img src={postData.image_path} alt={postData.title} className={styles.bannerImage} />
       )}
