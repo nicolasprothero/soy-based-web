@@ -13,7 +13,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>{"Soy Based Web"}</title>
+        <title>{"SOY BASED WEB"}</title>
         <meta name="description" content="SOY BASED WEB BY SOY BASED RISO" />
       </head>
       <body>
